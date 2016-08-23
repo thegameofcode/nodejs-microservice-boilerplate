@@ -1,2 +1,9 @@
 # nodejs-microservice-boilerplate
-Boilerplater with basic code to start building a microservice including: restify, mongodb, rabbitmq, papertrail
+Boilerplater with basic code to start building a microservice based on restify
+
+Other basics:
+ * cucumber
+ * mocha
+ * mongodb
+ * rabbitmq
+ * papertrail

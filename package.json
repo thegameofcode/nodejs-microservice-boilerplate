@@ -1,0 +1,46 @@
+{
+  "name": "nodejs-microservice-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate tu start building a microservice using restify",
+  "main": "start.js",
+  "engines": {
+    "node": ">=6.0"
+  },
+  "dependencies": {
+    "jsonschema": "^1.1.0",
+    "mongodb": "^2.2.5",
+    "restify": "^4.1.1",
+    "semver": "^5.3.0",
+    "shortid": "^2.2.6",
+    "winston": "^2.2.0",
+    "winston-papertrail": "^1.0.2"
+  },
+  "devDependencies": {
+    "cucumber": "^1.2.1",
+    "eslint": "^3.1.1",
+    "eslint-plugin-extra-rules": "^0.6.1",
+    "honestcode": "^1.0.10",
+    "istanbul": "^0.4.4",
+    "pre-commit": "^1.1.3",
+    "request": "^2.74.0"
+  },
+  "scripts": {
+    "start": "node ./src/start",
+    "lint": "eslint src test-acceptance",
+    "test-acceptance": "./node_modules/.bin/cucumber-js ./test/acceptance/features -r ./test/acceptance/step_definitions --format pretty",
+    "test-acceptance-only": "./node_modules/.bin/cucumber-js ./test/acceptance/features -r ./test/acceptance/step_definitions --tags @only --format pretty",
+    "coverage-acceptance": "./node_modules/istanbul/lib/cli.js cover cucumber-js test/acceptance/features -- -r ./test/acceptance/step_definitions --tags ~@ignore --format json:acceptance_test_results.json",
+    "coverage": "npm run coverage-acceptance",
+    "honestcode": "honestcode $HONESTCODE_TEST_RESULT_HOOK_CODE ./acceptance_test_results.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thegameofcode/nodejs-microservice-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/thegameofcode/nodejs-microservice-boilerplate.git#readme",
+  "pre-commit": [
+    "lint"
+  ]
+}

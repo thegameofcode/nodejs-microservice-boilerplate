@@ -1,0 +1,5 @@
+{
+	"DB_URI": "mongodb://:/players?w=1",
+	"PAPERTRAIL_HOST": "logs4.papertrailapp.com",
+	"PAPERTRAIL_PORT": 99999
+}
